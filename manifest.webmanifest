@@ -1,1 +1,25 @@
-{"name":"Toolynx — Developer Toolbox","short_name":"Toolynx","description":"Fast, private, local-first developer utilities.","start_url":"./","scope":"./","display":"standalone","background_color":"#090b10","theme_color":"#090b10","categories":["developer","utilities","productivity"],"icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "Toolynx — Developer Toolbox",
+  "short_name": "Toolynx",
+  "description": "32 fast, private, local-first developer utilities for Windows, macOS, Linux and mobile.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090b10",
+  "theme_color": "#090b10",
+  "categories": ["developer", "utilities", "productivity"],
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {"name":"JSON Studio","short_name":"JSON","url":"./#json"},
+    {"name":"Base64","short_name":"Base64","url":"./#base64"},
+    {"name":"Regex Tester","short_name":"Regex","url":"./#regex"},
+    {"name":"IPv4 Subnet","short_name":"Subnet","url":"./#subnet"}
+  ]
+}
