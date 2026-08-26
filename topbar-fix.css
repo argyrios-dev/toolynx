@@ -1,0 +1,66 @@
+/* Toolynx v1.1.1 — robust full-width top bar */
+html,body{max-width:100%;overflow-x:clip}
+
+header{
+  height:auto;
+  min-height:72px;
+  padding-top:env(safe-area-inset-top,0px);
+  border-bottom:0;
+  background:transparent;
+  isolation:isolate;
+}
+
+/* The content remains aligned to the app grid, while the glass surface spans
+   the entire viewport instead of ending at the 1280px content wrapper. */
+header::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:var(--header);
+  border-bottom:1px solid var(--l);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  pointer-events:none;
+}
+
+.brand,.theme,.github{flex:0 0 auto}
+.search{
+  width:auto;
+  max-width:440px;
+  min-width:180px;
+  flex:1 1 360px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Medium desktop / narrow Windows windows */
+@media(max-width:860px){
+  header{gap:9px}
+  .github{display:none}
+  .themeLabel{display:none}
+  .theme{width:42px;justify-content:center;padding:0}
+  .search{min-width:140px;max-width:none}
+}
+
+/* Phones and very narrow desktop windows */
+@media(max-width:560px){
+  .wrap{padding-left:max(15px,env(safe-area-inset-left,0px));padding-right:max(15px,env(safe-area-inset-right,0px))}
+  header{min-height:64px;gap:8px}
+  .brand span{display:none}
+  .brand img{width:32px;height:32px}
+  .search{min-width:0;flex:1 1 auto;margin:0;height:40px}
+  .search span{display:none}
+  .theme{height:40px;width:40px}
+}
+
+@media(max-width:360px){
+  header{gap:6px}
+  .wrap{padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))}
+  .search{padding:0 8px}
+  kbd{font-size:10px;padding:2px 5px}
+}
